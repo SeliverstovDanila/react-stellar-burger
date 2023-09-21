@@ -1,0 +1,35 @@
+.header {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_container {
+    width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header_navigation_left {
+    display: flex;
+    align-items: center;
+}
+
+.header_navigation_right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_link {
+    display: flex;
+    align-items: center;
+    color: var(--text-primary-color);
+    text-decoration: none;
+}
