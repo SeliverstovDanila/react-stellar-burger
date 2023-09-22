@@ -1,0 +1,23 @@
+.burgerIngredients {
+    height: 812px;
+    width: 600px;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.tab_panel {
+    display: flex;
+}
+
+.burgerIngredients_items {
+    height: 680px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+}
+
+.burgerIngredients_items li:not(:last-child) {
+    margin-bottom: 40px;
+}
