@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types'
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import {ingredientPropType} from '../../utils/prop-types'
-import styles from "./burger-ingredients.module.css";
+import styles from "../burger-ingredients/burger-ingredients.module.css";
 import IngredientGroup from "../burger-ingredients/ingredient-group/ingredient-group.jsx";
 
 function BurgerIngredients({compound}) {
@@ -23,9 +23,9 @@ function BurgerIngredients({compound}) {
         if (value === "main") mainRef.current.scrollIntoView({ behavior: "smooth" })
     };
     return (
-        <section className={`styles.burgerIngredients`}>
+        <section className={styles.ingredients}>
             <p className={`text text_type_main-large pt-10 pb-5`}>Соберите бургер</p>
-            <div className={`styles.tab_panel mb-10 pb-40`}>
+            <div className={`${styles.ingredients_tab_panel} mb-10 pb-40`}>
                 <Tab value="buns" active={current === 'buns'} onClick={handleTab}>
                     Булки
                 </Tab>
@@ -36,7 +36,7 @@ function BurgerIngredients({compound}) {
                     Начинки
                 </Tab>
             </div>
-            <ul className={`${styles.burgerIngredients_items} custom-scroll`}>
+            <ul className={`${styles.ingredients_items} custom-scroll`}>
                 <li ref={bunsRef}>
                     <IngredientGroup
                         name='Булки'
