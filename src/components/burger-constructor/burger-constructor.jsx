@@ -11,8 +11,7 @@ function BurgerConstructor({ compound }) {
                 <BurgerConstructorItem compound={compound} />
             </div>
             <div className={`${styles.burgerConstructor_info} mr-8`}>
-                <p className={`${styles.burgerConstructor_price} text text_type_digits-medium`}>
-                    10600
+                <p className={`${styles.burgerConstructor_price} text text_type_digits-medium`}> 10600
                     <CurrencyIcon type='primary' />
                 </p>
                 <Button htmlType="button" type="primary" size="large">

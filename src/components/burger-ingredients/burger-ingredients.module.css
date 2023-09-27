@@ -1,7 +1,6 @@
 .ingredients {
-    max-height: 912px;
     max-width: 600px;
-    margin: 0 40px 40px 380px;
+    margin: 0 40px 40px 0;
     flex-shrink: 0;
 }
 
@@ -10,13 +9,13 @@
 }
 
 .ingredients_items {
-    height: 680px;
-    margin: 0;
-    padding: 0;
     list-style: none;
     overflow: auto;
+    max-height: 680px;
+    margin: 0;
+    padding: 0;
 }
 
 .ingredients_items li:not(:last-child) {
-    margin-bottom: 40px;
+    margin: 0 0 40px 0;
 }

@@ -1,48 +1,46 @@
 import PropTypes from 'prop-types'
-import {ingredientPropType} from '../../../utils/prop-types'
+import { ingredientPropType } from '../../../utils/prop-types'
 import { ConstructorElement, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from './burger-constructor-item.module.css';
 
 function BurgerConstructorItem({ compound }) {
-    const bunsArray = compound.filter(item => item.type === 'buns')
-    const buns = bunsArray[0]
-    const element = compound.filter(item => item.type !== 'buns')
+
+    //Отфилтровывает булки от остальных ингридиентов
+    const bunsArray = compound.filter(el => el.type === 'bun');
+    const element = compound.filter(el => el.type !== 'bun');
+    const bun = bunsArray[0];
 
     return (
         <div className={styles.constructorItem}>
-            <div className={styles.constructorItem_container}>
-            {buns && buns(
+            <ul className={styles.constructorItem_container}>
                 <ConstructorElement
                     type="top"
                     isLocked={true}
-                    text={`${buns.name} (верх)`}
-                    price={buns.price}
-                    thumbnail={buns.image} />
-            )}
-            </div>
-            <div className={`${styles.constructorItem_scroll} custom-scroll`}>
-                {element.map((item) => (
-                    <div className={styles.constructorItem_scroll_container} key={item._id}>
+                    text={`${bun.name} (верх)`}
+                    price={bun.price}
+                    thumbnail={bun.image} />
+            </ul>
+            <ul className={`${styles.constructorItem_scroll} custom-scroll`}>
+                {element.map((el) => (
+                    <li className={styles.constructorItem_compound_container} key={el._id}>
                         <div className={styles.constructorItem_icon}>
                             <DragIcon type='primary' />
                         </div>
                         <ConstructorElement
-                            text={item.name}
-                            price={item.price}
-                            thumbnail={item.image} />
-                    </div>
+                            text={el.name}
+                            price={el.price}
+                            thumbnail={el.image} />
+                    </li>
                 ))}
-            </div>
-            <div className={styles.constructorItem_container}>
-            {buns && buns(
+            </ul>
+            <ul className={styles.constructorItem_container}>
                 <ConstructorElement
                     type="bottom"
                     isLocked={true}
-                    text={`${buns.name} (низ)`}
-                    price={buns.price}
-                    thumbnail={buns.image} />
-            )}
-            </div>
+                    text={`${bun.name} (низ)`}
+                    price={bun.price}
+                    thumbnail={bun.image} />
+            </ul>
         </div>
     )
 }
