@@ -27,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style: none;
 }
 
 .header_link {
@@ -44,12 +45,14 @@
     display: none;
 }
 
+/* Подготовка к адаптивной верстке */
 @media screen and (max-width:767px){
     .header{
         max-width: 767px;
+        height: 40px;
     }
 
-    .header_logo{
+    .header_logo_desktop{
         display: none;
     }
 

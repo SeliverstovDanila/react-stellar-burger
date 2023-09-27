@@ -15,10 +15,14 @@ export function AppHeader() {
                         <span className='text text_type_main-default text_color_inactive pl-2'>Лента заказов</span>
                     </a>
                 </nav>
-                <div className={`${styles.header_logo} pt-4 pb-4`}>
-                    <Logo />
-                    <img className={styles.header_logo_mobile} src={MobileLogo} alt="мобильная версия логотипа" />
-                </div>
+                <ul className={`${styles.header_logo} pt-4 pb-4`}>
+                    <li className={styles.header_logo_desktop}>
+                        <Logo />
+                    </li>
+                    <li className={styles.header_logo_mobile}>
+                        <img src={MobileLogo} alt="мобильная версия логотипа" />
+                    </li>
+                </ul>
                 <nav className={styles.header_navigation_right}>
                     <a href='#' className={`${styles.header_link} pl-5 pr-5 pt-4 pb-4`}>
                         <ProfileIcon type='secondary' />
