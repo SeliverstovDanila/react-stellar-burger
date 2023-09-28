@@ -4,6 +4,7 @@ import { ingredientPropType } from '../../utils/prop-types'
 import BurgerConstructorItem from "../burger-constructor/burger-constructor-item/burger-constructor-item.jsx";
 import { CurrencyIcon, Button } from '@ya.praktikum/react-developer-burger-ui-components'
 
+
 function BurgerConstructor({ compound }) {
     return (
         <section className={styles.burgerConstructor}>

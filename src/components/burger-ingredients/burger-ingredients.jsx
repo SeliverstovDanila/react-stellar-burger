@@ -5,6 +5,7 @@ import { ingredientPropType } from '../../utils/prop-types'
 import styles from "../burger-ingredients/burger-ingredients.module.css";
 import IngredientGroup from "../burger-ingredients/ingredient-group/ingredient-group.jsx";
 
+
 function BurgerIngredients({ compound }) {
     const [current, setCurrent] = useState('bun')
     //Фильтрация булок, соусов и начинки согласно категориям

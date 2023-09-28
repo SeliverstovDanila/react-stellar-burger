@@ -3,6 +3,7 @@ import { ingredientPropType } from '../../../utils/prop-types'
 import { ConstructorElement, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from './burger-constructor-item.module.css';
 
+
 function BurgerConstructorItem({ compound }) {
 
     //Отфилтровывает булки от остальных ингридиентов
