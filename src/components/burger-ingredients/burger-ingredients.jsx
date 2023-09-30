@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import PropTypes from 'prop-types'
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ingredientPropType } from '../../utils/prop-types'
@@ -9,9 +9,9 @@ import IngredientGroup from "../burger-ingredients/ingredient-group/ingredient-g
 function BurgerIngredients({ compound }) {
     const [current, setCurrent] = useState('bun')
     //Фильтрация булок, соусов и начинки согласно категориям
-    const bun = compound.filter(item => item.type === 'bun')
-    const sauce = compound.filter(item => item.type === 'sauce')
-    const filling = compound.filter(item => item.type === 'main')
+    const bun = useMemo(() => {return compound.filter(item => item.type === 'bun')});
+    const sauce = useMemo(() => {return compound.filter(item => item.type === 'sauce')});
+    const filling = useMemo(() => {return compound.filter(item => item.type === 'main')});
 
     const bunsRef = useRef(null);
     const sauceRef = useRef(null);
