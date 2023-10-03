@@ -1,14 +1,15 @@
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types'
 import { ingredientPropType } from '../../../utils/prop-types'
 import { ConstructorElement, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from './burger-constructor-item.module.css';
 
 
-function BurgerConstructorItem({ compound }) {
+function BurgerConstructorItem({ ingredients }) {
 
     //Отфилтровывает булки от остальных ингридиентов
-    const bunsArray = compound.filter(el => el.type === 'bun');
-    const element = compound.filter(el => el.type !== 'bun');
+    const bunsArray = useMemo(() => { return ingredients.filter(el => el.type === 'bun') });
+    const element = useMemo(() => { return ingredients.filter(el => el.type !== 'bun') });
     const bun = bunsArray[0];
 
     return (
@@ -47,7 +48,7 @@ function BurgerConstructorItem({ compound }) {
 }
 
 BurgerConstructorItem.propTypes = {
-    compound: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
+    ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
 }
 
 export default BurgerConstructorItem
