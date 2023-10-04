@@ -77,7 +77,7 @@ function BurgerIngredients({ ingredients }) {
             </ul>
             {visibleDetails &&
                 <Modal onClose={closeDetails} title="Детали ингредиента">
-                    <IngredientDetails ingredient={currentItem} />
+                    <IngredientDetails ingredients={currentItem} />
                 </Modal>
             }
         </section>

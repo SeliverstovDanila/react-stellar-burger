@@ -6,9 +6,9 @@ import { useEffect } from 'react';
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 
-const popup = document.getElementById("react-popup");
+const popupRoot = document.getElementById("react-modals");
 
-function Modal ({ children, title, onClose }) {
+function Modal({ children, title, onClose }) {
 
     useEffect(() => {
         const handleEscClose = (event) => {
@@ -32,13 +32,13 @@ function Modal ({ children, title, onClose }) {
                         <span className={`${styles.popup_title} text text_type_main-large`}>
                             {title}
                         </span>
-                        <CloseIcon onClick={onClose} type='primary' />
+                        <CloseIcon onClick={onClose} type='primary' className={styles.popup_close_icon} />
                     </div>
                     {children}
                 </div>
             </>
         ),
-        popup
+        popupRoot
     );
 }
 
