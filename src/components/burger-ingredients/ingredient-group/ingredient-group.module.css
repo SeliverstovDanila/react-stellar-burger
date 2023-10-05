@@ -11,6 +11,10 @@
     height: 208px; 
 }
 
+.ingredientGroup_item img {
+    cursor: pointer;
+}
+
 .ingredientGroup_text {
     display: flex;
     justify-content: center;

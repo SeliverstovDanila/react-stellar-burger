@@ -32,7 +32,7 @@ function Modal({ children, title, onClose }) {
                         <span className={`${styles.popup_title} text text_type_main-large`}>
                             {title}
                         </span>
-                        <CloseIcon onClick={onClose} type='primary' className={styles.popup_close_icon} />
+                        <CloseIcon onClick={onClose} type='primary' />
                     </div>
                     {children}
                 </div>

@@ -10,8 +10,8 @@ function IngredientGroup({ name, ingredients, showDetails }) {
                 {name}
             </p>
             <div className={styles.ingredientGroup}>
-                {ingredients.map((el, item) =>
-                    <div key={el._id} className={styles.ingredientGroup_item} onClick={() => showDetails(item)}>
+                {ingredients.map((el) =>
+                    <div key={el._id} className={styles.ingredientGroup_item} onClick={() => showDetails(el)}>
                         <Counter count={1} size="default" extraClass="m-1" />
                         <img alt={el.name} src={el.image} className={'ml-4 mr-4'} />
                         <div className={styles.ingredientGroup_text}>

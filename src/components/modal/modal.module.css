@@ -1,12 +1,12 @@
 .popup {
-    border-radius: 40px;
-    background-color: rgba(28, 28, 33, 1);
-    padding: 40px 40px 80px 40px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
+    border-radius: 40px;
+    background-color: rgba(28, 28, 33, 1);
+    padding: 40px 40px 40px 40px;
+    box-sizing: border-box;
     position: fixed;
     top: 20%;
     left: 31%;
@@ -17,10 +17,11 @@
     display: flex;
     align-self: flex-start;
     justify-content: space-between;
+    align-items: center;
     width: 600px;
     height: 64px;
 }
 
-.popup_close_icon {
+.popup_container svg {
     cursor: pointer;
 }
