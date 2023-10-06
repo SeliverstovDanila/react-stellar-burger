@@ -6,13 +6,13 @@ import { useEffect } from 'react';
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 
-const popupRoot = document.getElementById("react-modals");
+const modalRoot = document.getElementById("root-modals");
 
 function Modal({ children, title, onClose }) {
 
     useEffect(() => {
-        const handleEscClose = (event) => {
-            if (event.key === 'Escape') {
+        const handleEscClose = (evt) => {
+            if (evt.key === 'Escape') {
                 onClose();
             }
         };
@@ -27,9 +27,9 @@ function Modal({ children, title, onClose }) {
         (
             <>
                 <ModalOverlay onClose={onClose} />
-                <div className={styles.popup}>
-                    <div className={styles.popup_container}>
-                        <span className={`${styles.popup_title} text text_type_main-large`}>
+                <div className={styles.modal}>
+                    <div className={styles.modal_container}>
+                        <span className={`${styles.modal_title} text text_type_main-large`}>
                             {title}
                         </span>
                         <CloseIcon onClick={onClose} type='primary' />
@@ -38,7 +38,7 @@ function Modal({ children, title, onClose }) {
                 </div>
             </>
         ),
-        popupRoot
+        modalRoot
     );
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./order-details.module.css";
 import successLogo from "../../../images/success.png";
-// import { CheckMarkIcon } from '@ya.praktikum/react-developer-burger-ui-components'  не гиф элемент:c
 
 
 export default function OrderDetails() {

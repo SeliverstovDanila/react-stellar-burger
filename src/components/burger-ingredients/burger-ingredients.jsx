@@ -8,14 +8,14 @@ import Modal from "../modal/modal.jsx"
 import IngredientDetails from "./ingredient-details/ingredient-details.jsx"
 
 
-function BurgerIngredients({ ingredients }) {
+function BurgerIngredients({ ingredient }) {
     const [current, setCurrent] = useState('bun');
     const [visibleDetails, setVisibleDetails] = useState(false);
     const [currentItem, setCurrentItem] = useState(null);
     //Фильтрация булок, соусов и начинки согласно категориям
-    const bun = useMemo(() => { return ingredients.filter(item => item.type === 'bun') });
-    const sauce = useMemo(() => { return ingredients.filter(item => item.type === 'sauce') });
-    const filling = useMemo(() => { return ingredients.filter(item => item.type === 'main') });
+    const bun = useMemo(() => { return ingredient.filter(item => item.type === 'bun') });
+    const sauce = useMemo(() => { return ingredient.filter(item => item.type === 'sauce') });
+    const filling = useMemo(() => { return ingredient.filter(item => item.type === 'main') });
 
     const bunsRef = useRef(null);
     const sauceRef = useRef(null);
@@ -56,35 +56,35 @@ function BurgerIngredients({ ingredients }) {
                 <li ref={bunsRef}>
                     <IngredientGroup
                         name='Булки'
-                        ingredients={bun}
+                        ingredient={bun}
                         showDetails={showDetails}
                     />
                 </li>
                 <li ref={sauceRef}>
                     <IngredientGroup
                         name='Соусы'
-                        ingredients={sauce}
+                        ingredient={sauce}
                         showDetails={showDetails}
                     />
                 </li>
                 <li ref={fillingRef}>
                     <IngredientGroup
                         name='Начинка'
-                        ingredients={filling}
+                        ingredient={filling}
                         showDetails={showDetails}
                     />
                 </li>
             </ul>
             {visibleDetails &&
                 <Modal onClose={closeDetails} title="Детали ингредиента">
-                    <IngredientDetails ingredients={currentItem} />
+                    <IngredientDetails ingredient={currentItem} />
                 </Modal>
             }
         </section>
     );
 }
 BurgerIngredients.propTypes = {
-    ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
+    ingredient: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
 }
 
 export default BurgerIngredients;

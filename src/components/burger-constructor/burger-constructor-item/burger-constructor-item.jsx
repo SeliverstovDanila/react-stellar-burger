@@ -5,11 +5,11 @@ import { ConstructorElement, DragIcon } from '@ya.praktikum/react-developer-burg
 import styles from './burger-constructor-item.module.css';
 
 
-function BurgerConstructorItem({ ingredients }) {
+function BurgerConstructorItem({ ingredient }) {
 
     //Отфилтровывает булки от остальных ингридиентов
-    const bunsArray = useMemo(() => { return ingredients.filter(el => el.type === 'bun') });
-    const element = useMemo(() => { return ingredients.filter(el => el.type !== 'bun') });
+    const bunsArray = useMemo(() => { return ingredient.filter(el => el.type === 'bun') });
+    const element = useMemo(() => { return ingredient.filter(el => el.type !== 'bun') });
     const bun = bunsArray[0];
 
     return (
@@ -48,7 +48,7 @@ function BurgerConstructorItem({ ingredients }) {
 }
 
 BurgerConstructorItem.propTypes = {
-    ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
+    ingredient: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
 }
 
 export default BurgerConstructorItem

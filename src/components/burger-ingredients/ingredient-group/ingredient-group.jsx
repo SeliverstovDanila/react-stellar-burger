@@ -3,14 +3,14 @@ import { ingredientPropType } from '../../../utils/prop-types'
 import PropTypes from 'prop-types'
 import styles from "./ingredient-group.module.css";
 
-function IngredientGroup({ name, ingredients, showDetails }) {
+function IngredientGroup({ name, ingredient, showDetails }) {
     return (
         <>
             <p className='text text_type_main-medium'>
                 {name}
             </p>
             <div className={styles.ingredientGroup}>
-                {ingredients.map((el) =>
+                {ingredient.map((el) =>
                     <div key={el._id} className={styles.ingredientGroup_item} onClick={() => showDetails(el)}>
                         <Counter count={1} size="default" extraClass="m-1" />
                         <img alt={el.name} src={el.image} className={'ml-4 mr-4'} />
@@ -31,7 +31,7 @@ function IngredientGroup({ name, ingredients, showDetails }) {
 }
 IngredientGroup.propTypes = {
     name: PropTypes.string.isRequired,
-    ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
+    ingredient: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
 }
 
 export default IngredientGroup

@@ -25,7 +25,7 @@ function App() {
   const [state, setState] = useState({
     loading: false,
     error: false,
-    ingredients: []
+    ingredient: []
   });
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
     getIngredients()
       .then((item) => {
         setState({
-          ingredients: item.data,
+          ingredient: item.data,
           loading: false,
           error: false
         });
@@ -50,10 +50,10 @@ function App() {
       </header>
       <main className={styles.main}>
         {state.loading && <Loader />}
-        {!state.loading && !state.error && state.ingredients.length && (
+        {!state.loading && !state.error && state.ingredient.length && (
           <>
-            <BurgerIngredients ingredients={state.ingredients} />
-            <BurgerConstructor ingredients={state.ingredients} />
+            <BurgerIngredients ingredient={state.ingredient} />
+            <BurgerConstructor ingredient={state.ingredient} />
           </>
         )}
       </main>
