@@ -1,0 +1,21 @@
+.ingredients {
+    max-width: 600px;
+    margin: 0 40px 40px 0;
+    flex-shrink: 0;
+}
+
+.ingredients_tab_panel {
+    display: flex;
+}
+
+.ingredients_items {
+    list-style: none;
+    overflow: auto;
+    max-height: 680px;
+    margin: 0;
+    padding: 0;
+}
+
+.ingredients_items li:not(:last-child) {
+    margin: 0 0 40px 0;
+}

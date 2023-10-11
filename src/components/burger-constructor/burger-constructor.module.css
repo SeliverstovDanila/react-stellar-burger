@@ -1,0 +1,21 @@
+.burgerConstructor {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px 0;
+}
+
+.burgerConstructor_container {
+    padding-top: 116px;
+}
+
+.burgerConstructor_info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0 48px;
+}
+
+.burgerConstructor_info svg {
+    margin: 0 0 0 9px;
+}
