@@ -2,6 +2,7 @@
   "name": "react-burger-starter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/SeliverstovDanila.io/react-stellar-burger",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
     "@ya.praktikum/react-developer-burger-ui-components": "^1.14.0",
@@ -14,7 +15,7 @@
     "react-intersection-observer": "^8.32.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.5",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
@@ -37,7 +38,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
