@@ -4,22 +4,10 @@ import styles from "./app.module.css";
 import { AppHeader } from "../app-header/app-header";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
+import getIngredients from "./../../utils/burger-api.js";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-
-const API = "https://norma.nomoreparties.space/api";
-
-function getCheckResponse(res) {
-  if (!res.ok) {
-    return Promise.reject(`Ошибка: ${res.status}`);
-  } else {
-    return res.json();
-  }
-}
-
-function getIngredients() {
-  return fetch(`${API}/ingredients/`)
-    .then(getCheckResponse)
-}
 
 function App() {
   const [state, setState] = useState({
@@ -51,10 +39,10 @@ function App() {
       <main className={styles.main}>
         {state.loading && <Loader />}
         {!state.loading && !state.error && state.ingredient.length && (
-          <>
+          <DndProvider backend={HTML5Backend}>
             <BurgerIngredients ingredient={state.ingredient} />
             <BurgerConstructor ingredient={state.ingredient} />
-          </>
+          </DndProvider>
         )}
       </main>
     </>
